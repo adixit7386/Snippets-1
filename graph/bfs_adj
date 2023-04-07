@@ -1,0 +1,14 @@
+void bfs(vector<vector<int>>& adj,int source,vector<bool>&visited){
+        visited[source]=true;
+        queue<int> q;
+        q.push(source);
+        while(q.empty()==false){
+            int s = q.front();
+            q.pop();
+            for(int i:adj[s]){
+                if(!visited[i]){
+                q.push(i);
+                visited[i]=true;}
+            }
+        }
+    }
